@@ -1,18 +1,29 @@
 <template>
-    <section class="pt-1 h-8 bg-white text-center flex justify-center items-center gap-2">
-        Made by Martí Paredes - Personal portafolio
-        <MyTooltip text="Visit my Github">
-            <Icon class="text-slate-950 hover:text-primary-800 cursor-pointer aspect-square w-5 transition-colors"
-                width="none" height="none" icon="mdi:github" @click="window.open('https://github.com/multiparedes')" />
-        </MyTooltip>
+  <section
+    class="pt-1 h-8 dark:bg-darker bg-white dark:text-white text-slate-950 text-center flex justify-center gap-2"
+  >
+    <p>Made by Martí Paredes</p>
+    -
+    <div class="flex gap-2 mt-0.5">
+      <MyTooltip text="Visit my Github">
+        <Button
+          class="hover:text-primary-800"
+          color="transparent"
+          icon="mdi:github"
+          link="https://github.com/multiparedes"
+          is-external-link
+        />
+      </MyTooltip>
 
-        <MyTooltip text="Take a look at my LinkedIn">
-            <Icon class="text-slate-950 hover:text-primary-800 cursor-pointer aspect-square w-5 transition-colors"
-                width="none" height="none" icon="mdi:linkedin" />
-        </MyTooltip>
-    </section>
+      <MyTooltip text="Take a look at my LinkedIn">
+        <Button
+          class="hover:text-primary-800"
+          color="transparent"
+          icon="mdi:linkedin"
+          link="https://github.com/multiparedes"
+          is-external-link
+        />
+      </MyTooltip>
+    </div>
+  </section>
 </template>
-
-<script setup>
-import { Icon } from '@iconify/vue';
-</script>

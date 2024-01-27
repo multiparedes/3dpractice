@@ -1,6 +1,6 @@
 <template>
   <button
-    class="inline-flex items-center gap-2 px-4 py-2 transition-color duration-200 linear text-white rounded-full"
+    class="inline-flex items-center gap-2 px-4 py-2 transition-color duration-200 linear text-slate-900 dark:text-white rounded-full"
     :class="`button-${color}-${variant}`"
     target="_blank"
     @click="navigate"
@@ -42,38 +42,38 @@ function navigate() {
 
 <style class="scss" scoped>
 .button-primary-solid {
-  @apply border-2 border-primary-600 bg-primary-600 hover:bg-primary-400;
+  @apply text-current border-2 border-primary-600 bg-primary-600 hover:bg-primary-400;
 }
 
 .button-primary-bordered {
-  @apply border-2 border-primary-600 hover:bg-primary-400 hover:text-white text-primary-600;
+  @apply text-current  border-2 border-primary-600 hover:bg-primary-400 hover:text-white text-primary-600;
 }
 
 .button-secondary-solid {
-  @apply border-2 border-secondary-600 bg-secondary-600 hover:bg-secondary-400;
+  @apply text-current  border-2 border-secondary-600 bg-secondary-600 hover:bg-secondary-400;
 }
 
 .button-secondary-bordered {
-  @apply border-2 border-secondary-600 text-secondary-600 hover:bg-secondary-400 hover:text-white;
+  @apply text-current  border-2 border-secondary-600 text-secondary-600 hover:bg-secondary-400 hover:text-white;
 }
 
 .button-transparent-solid {
-  @apply p-0 text-white;
+  @apply text-current  p-0 text-current;
 }
 
 .button-error-solid {
-  @apply border-2 border-red-600 bg-red-600 hover:bg-red-400;
+  @apply text-current  border-2 border-red-600 bg-red-600 hover:bg-red-400;
 }
 
 .button-error-bordered {
-  @apply border-2 border-red-600 text-red-600 hover:bg-red-400 hover:text-white;
+  @apply text-current  border-2 border-red-600 text-red-600 hover:bg-red-400 hover:text-white;
 }
 
 .button-primary-link {
-  @apply p-0 hover:text-primary-400 hover:underline;
+  @apply p-0 text-current hover:text-primary-400 hover:underline;
 }
 
 .button-secondary-link {
-  @apply p-0 hover:text-secondary-400 hover:underline;
+  @apply p-0 text-current hover:text-secondary-400 hover:underline;
 }
 </style>

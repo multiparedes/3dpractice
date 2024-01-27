@@ -29,6 +29,7 @@
       url="https://prod.spline.design/gExza-HqyQINKaxa/scene.splinecode"
     />
     <!--
+      TODO: Reduce number of poligons.
       <SplineScene
       class="absolute"
       url="https://prod.spline.design/7Efqdpd4pA4v9Bhd/scene.splinecode"

@@ -19,9 +19,9 @@
           ...
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent class="text-center">
-        <DropdownMenuLabel>Lang: TODO</DropdownMenuLabel>
-        <DropdownMenuLabel>Style: TODO</DropdownMenuLabel>
+      <DropdownMenuContent class="text-center flex flex-col p-2 gap-2">
+        Lang: TODO
+        <ColorToggle />
       </DropdownMenuContent>
     </DropdownMenu>
 
@@ -35,7 +35,7 @@
           <Button variant="link">My projects</Button>
           <Button variant="link">Contact</Button>
           <Button variant="link">Lang: TODO</Button>
-          <Button variant="link">Style: TODO</Button>
+          <ColorToggle />
         </div>
       </SheetContent>
     </Sheet>
@@ -49,5 +49,21 @@ function scrollTop() {
     left: 0,
     behavior: "smooth",
   });
+}
+
+onBeforeMount(() => {
+  initialToggleTheme();
+});
+
+function initialToggleTheme(): void {
+  if (
+    localStorage.theme === "dark" ||
+    (!("theme" in localStorage) &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches)
+  ) {
+    document.documentElement.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+  }
 }
 </script>

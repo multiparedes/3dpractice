@@ -1,12 +1,16 @@
 <template>
   <div>
-    <section class="flex flex-col min-h-screen md:px-24 px-4 pt-2 bg-darker">
+    <section
+      class="flex flex-col min-h-screen md:px-24 px-8 pt-2 bg-slate-500 dark:bg-darker"
+    >
       <Navbar />
 
       <HeroSection class="overflow-clip" />
     </section>
 
-    <section class="h-screen bg-primary-200 z-20 overflow-clip"></section>
+    <section
+      class="h-screen bg-primary-200 dark:bg-stone-600 z-20 overflow-clip"
+    ></section>
 
     <Footer />
   </div>
