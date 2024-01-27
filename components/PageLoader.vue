@@ -4,16 +4,20 @@
       v-if="!ready"
       class="fixed z-[100] w-screen h-screen bg-gradient-to-tr from-darker via-slate-800 to-slate-950 grid place-content-center overflow-x-hidden"
     >
-      <p
-        class="text-9xl text-transparent text-outline tracking-wider max-w-screen-2xl animate-pulse"
-      >
-        Loading ... <span>//</span>
-      </p>
+      <MarqueeText>
+        <p
+          class="text-9xl p-6 text-transparent text-outline tracking-wider max-w-screen-2xl animate-pulse mr-2"
+        >
+          Loading ... <span>//</span>
+        </p>
+      </MarqueeText>
     </div>
   </Transition>
 </template>
 
 <script setup lang="ts">
+import MarqueeText from "vue-marquee-text-component";
+
 interface Props {
   ready?: boolean;
 }
