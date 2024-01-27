@@ -26,6 +26,7 @@
     <SplineScene
       class="absolute z-[5]"
       url="https://prod.spline.design/gExza-HqyQINKaxa/scene.splinecode"
+      @scene-loaded="allComplete = true"
     />
     <!--
       TODO: Reduce number of poligons.
@@ -39,6 +40,13 @@
 
 <script setup>
 import Button from "@/components/Button.vue";
+
+const emit = defineEmits(["ready"]);
+
+const allComplete = ref(false);
+watch(allComplete, () => {
+  emit("ready");
+});
 </script>
 
 <style scoped>

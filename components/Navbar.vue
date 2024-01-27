@@ -2,9 +2,9 @@
   <section
     class="w-full flex justify-between text-white items-center content-center"
   >
-    <Button color="transparent" class="text-xl" @click="scrollTop()"
-      >Multiparedes</Button
-    >
+    <Button color="transparent" class="text-xl" @click="scrollTop()">
+      Multiparedes
+    </Button>
 
     <div class="gap-8 hidden md:flex text-white">
       <Button variant="link">{{ $t("navbar.about") }}</Button>
