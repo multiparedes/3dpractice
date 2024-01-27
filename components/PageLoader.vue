@@ -15,14 +15,12 @@
   </Transition>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import MarqueeText from "vue-marquee-text-component";
 
-interface Props {
-  ready?: boolean;
-}
-
-defineProps<Props>();
+defineProps({
+  ready: { type: Boolean, required: true },
+});
 </script>
 
 <style scoped>

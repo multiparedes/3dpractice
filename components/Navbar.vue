@@ -37,8 +37,7 @@
         <div class="flex flex-col justify-center w-full h-full gap-4">
           <Button variant="link">About me</Button>
           <Button variant="link">My projects</Button>
-          <Button variant="link">Contact</Button>
-          <Button variant="link">Lang: TODO</Button>
+          <LanguageSelector />
           <ColorToggle />
         </div>
       </SheetContent>
