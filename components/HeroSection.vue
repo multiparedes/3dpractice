@@ -3,12 +3,12 @@
     <div class="z-10 text-center flex flex-col gap-4 text-white items-center">
       <div>
         <h1
-          class="uppercase text-[40px] font-semibold tracking-wider text-outline"
+          class="uppercase text-[40px] font-semibold tracking-wider text-outline-light dark:text-outline"
         >
           Hi, I'm Martí Paredes
         </h1>
         <h1
-          class="uppercase text-[40px] font-semibold tracking-wider bg-gradient-to-r from-primary-600 to-secondary-600 inline-block text-transparent bg-clip-text text-outline"
+          class="uppercase text-[40px] font-semibold tracking-wider bg-gradient-to-r from-primary-600 to-secondary-600 inline-block text-transparent bg-clip-text text-outline-light dark:text-outline"
         >
           Front-end developer
         </h1>
@@ -46,5 +46,10 @@ import Button from "@/components/Button.vue";
 .text-outline {
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: #262525;
+}
+
+.text-outline-light {
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: rgb(100 116 139);
 }
 </style>

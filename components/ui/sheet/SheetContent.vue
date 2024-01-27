@@ -57,7 +57,7 @@ const sheetVariants = cva(
       <DialogClose
         class="absolute top-4 right-4 p-0.5 transition-colors rounded-md hover:bg-slate-100 dark:hover:bg-slate-800"
       >
-        <X class="w-4 h-4 text-slate-500 dark:text-slate-400" />
+        <X class="w-4 h-4 text-slate-500 dark:text-slate-200" />
       </DialogClose>
     </DialogContent>
   </DialogPortal>

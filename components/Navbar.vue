@@ -1,13 +1,13 @@
 <template>
   <section class="flex justify-between text-white items-baseline">
-    <NuxtLink href="/" class="text-xl" @click="scrollTop()"
-      >Multiparedes</NuxtLink
+    <Button color="transparent" class="text-xl" @click="scrollTop()"
+      >Multiparedes</Button
     >
 
-    <div class="gap-8 hidden md:flex">
-      <Button class="text-white" variant="link">About me</Button>
-      <Button class="text-white" variant="link">My projects</Button>
-      <Button class="text-white" variant="link">Contact</Button>
+    <div class="gap-8 hidden md:flex text-white">
+      <Button variant="link">About me</Button>
+      <Button variant="link">My projects</Button>
+      <Button variant="link">Contact</Button>
     </div>
 
     <DropdownMenu>
@@ -29,7 +29,7 @@
       <SheetTrigger class="flex md:hidden">
         <Button icon="ci:hamburger-lg" variant="link" />
       </SheetTrigger>
-      <SheetContent class="bg-stone-800">
+      <SheetContent class="dark:bg-darker bg-slate-600 text-white">
         <div class="flex flex-col justify-center w-full h-full gap-4">
           <Button variant="link">About me</Button>
           <Button variant="link">My projects</Button>
