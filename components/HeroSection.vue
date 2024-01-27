@@ -1,14 +1,14 @@
 <template>
   <section class="flex-grow flex items-center justify-center">
     <div class="z-10 text-center flex flex-col gap-4 text-white items-center">
-      <div>
+      <div class="relative">
         <h1
           class="uppercase text-[40px] font-semibold tracking-wider text-outline-light dark:text-outline"
         >
           Hi, I'm Martí Paredes
         </h1>
         <h1
-          class="uppercase text-[40px] font-semibold tracking-wider bg-gradient-to-r from-primary-600 to-secondary-600 inline-block text-transparent bg-clip-text text-outline-light dark:text-outline"
+          class="uppercase text-[40px] font-semibold tracking-wider bg-gradient-to-r from-primary-500 to-secondary-400 inline-block text-transparent bg-clip-text text-outline-light dark:text-outline"
         >
           Front-end developer
         </h1>
