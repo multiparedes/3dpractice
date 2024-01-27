@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   ssr: false,
-  modules: ["@nuxtjs/tailwindcss", "shadcn-nuxt"],
+  modules: ["@nuxtjs/tailwindcss", "shadcn-nuxt", "@nuxtjs/i18n"],
   plugins: ["@/plugins/Iconify.js"],
   postcss: {
     plugins: {
@@ -13,5 +13,13 @@ export default defineNuxtConfig({
   shadcn: {
     prefix: "",
     componentDir: "./components/ui",
+  },
+  app: {
+    head: {
+      title: "Personal portafolio",
+    },
+  },
+  i18n: {
+    vueI18n: "./i18n.config.ts",
   },
 });

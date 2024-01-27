@@ -1,0 +1,22 @@
+{
+  "navbar": {
+    "about": "About me",
+    "projects": "My projects",
+    "contact": "Contact",
+    "switch_lang": "Switch to {language}",
+    "switch_mode": "Switch to {mode} mode",
+    "light": "light",
+    "dark": "dark"
+  },
+  "hero": {
+    "title": "Hi, I'm Martí Paredes",
+    "subtitle": "front-end developer",
+    "introduction": "Creating immersive digital experiences with a focus on design and functionality.",
+    "start": "Start the journey"
+  },
+  "footer": {
+    "made_by": "Made by Martí Paredes",
+    "github": "Visit my GitHub profile",
+    "linkedin": "Take a look at my LinkedIn"
+  }
+}

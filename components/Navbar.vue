@@ -1,13 +1,15 @@
 <template>
-  <section class="flex justify-between text-white items-baseline">
+  <section
+    class="w-full flex justify-between text-white items-center content-center"
+  >
     <Button color="transparent" class="text-xl" @click="scrollTop()"
       >Multiparedes</Button
     >
 
     <div class="gap-8 hidden md:flex text-white">
-      <Button variant="link">About me</Button>
-      <Button variant="link">My projects</Button>
-      <Button variant="link">Contact</Button>
+      <Button variant="link">{{ $t("navbar.about") }}</Button>
+      <Button variant="link">{{ $t("navbar.projects") }}</Button>
+      <Button variant="link">{{ $t("navbar.contact") }}</Button>
     </div>
 
     <DropdownMenu>
@@ -19,8 +21,10 @@
           ...
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent class="text-center flex flex-col p-2 gap-2">
-        Lang: TODO
+      <DropdownMenuContent
+        class="text-center items-center flex flex-col p-2 gap-2"
+      >
+        <LanguageSelector />
         <ColorToggle />
       </DropdownMenuContent>
     </DropdownMenu>

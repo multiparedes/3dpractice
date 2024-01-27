@@ -1,7 +1,7 @@
 <template>
   <div>
     <section
-      class="flex flex-col min-h-screen md:px-24 px-8 pt-2 bg-slate-500 dark:bg-darker"
+      class="flex flex-col min-h-screen md:px-24 px-8 pt-2 bg-gradient-to-tr from-slate-600 via-slate-500 to-stone-700 dark:from-darker dark:via-slate-800 dark:to-slate-950"
     >
       <Navbar />
 

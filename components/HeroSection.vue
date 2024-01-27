@@ -3,24 +3,23 @@
     <div class="z-10 text-center flex flex-col gap-4 text-white items-center">
       <div class="relative">
         <h1
-          class="uppercase text-[40px] font-semibold tracking-wider text-outline-light dark:text-outline"
+          class="uppercase text-[45px] font-semibold tracking-wider text-outline-light dark:text-outline"
         >
-          Hi, I'm Martí Paredes
+          {{ $t("hero.title") }}
         </h1>
         <h1
-          class="uppercase text-[40px] font-semibold tracking-wider bg-gradient-to-r from-primary-500 to-secondary-400 inline-block text-transparent bg-clip-text text-outline-light dark:text-outline"
+          class="uppercase text-[45px] font-semibold tracking-wider bg-gradient-to-r from-primary-500 to-secondary-400 inline-block text-transparent bg-clip-text text-outline-light dark:text-outline"
         >
-          Front-end developer
+          {{ $t("hero.subtitle") }}
         </h1>
       </div>
 
       <p class="text-[20px]">
-        Creating immersive digital experiences with a focus on design and
-        functionality.
+        {{ $t("hero.introduction") }}
       </p>
 
       <Button class="w-fit" color="secondary" icon="mingcute:down-line">
-        Start the journey
+        {{ $t("hero.start") }}
       </Button>
     </div>
 

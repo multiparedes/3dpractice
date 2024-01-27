@@ -1,22 +1,25 @@
 <template>
   <Button variant="link" @click="toggleTheme(otherTheme)">
-    Switch to {{ otherTheme }} mode
+    <Icon :icon="icons[otherTheme]" />
+    {{ $t("navbar.switch_mode", { mode: $t(`navbar.${otherTheme}`) }) }}
   </Button>
 </template>
 
 <script setup lang="ts">
 const currentTheme = ref<string>(localStorage.theme || "light");
 const themes: string[] = ["light", "dark"];
+const icons: Record<string, string> = {
+  light: "ph:moon",
+  dark: "ph:sun",
+};
 
-function toggleTheme(theme: string | undefined): void {
-  if (theme) {
-    document.documentElement.classList.toggle("dark", theme === "dark");
-    localStorage.theme = theme;
-    currentTheme.value = theme;
-  }
+function toggleTheme(theme: string): void {
+  document.documentElement.classList.toggle("dark", theme === "dark");
+  localStorage.theme = theme;
+  currentTheme.value = theme;
 }
 
-const otherTheme = computed(() =>
-  themes.find((theme) => theme !== currentTheme.value)
+const otherTheme = computed(
+  () => themes.find((theme) => theme !== currentTheme.value) || "light"
 );
 </script>
