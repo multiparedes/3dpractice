@@ -36,6 +36,7 @@ module.exports = {
       colors: {
         primary: colors.blue,
         secondary: colors.fuchsia,
+        darker: "#262525",
       },
     },
   },
