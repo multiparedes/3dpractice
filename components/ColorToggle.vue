@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-const currentTheme = ref<string>(localStorage.theme || "light");
+const currentTheme = ref<string>(localStorage.theme || "dark");
 const themes: string[] = ["light", "dark"];
 const icons: Record<string, string> = {
   light: "ph:moon",
@@ -20,6 +20,6 @@ function toggleTheme(theme: string): void {
 }
 
 const otherTheme = computed(
-  () => themes.find((theme) => theme !== currentTheme.value) || "light"
+  () => themes.find((theme) => theme !== currentTheme.value) || "dark"
 );
 </script>

@@ -4,7 +4,7 @@
       v-if="!ready"
       class="fixed z-[100] w-screen h-screen bg-gradient-to-tr from-darker via-slate-800 to-slate-950 grid place-content-center overflow-x-hidden"
     >
-      <MarqueeText>
+      <MarqueeText :repeat="10">
         <p
           class="text-9xl p-6 text-transparent text-outline tracking-wider max-w-screen-2xl animate-pulse mr-2"
         >
@@ -24,7 +24,6 @@ defineProps({
 </script>
 
 <style scoped>
-/* we will explain what these classes do next! */
 .v-enter-active,
 .v-leave-active {
   transition: opacity 1s linear 0.5s;
