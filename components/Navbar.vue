@@ -3,7 +3,7 @@
     <Button color="transparent" class="text-xl" @click="scrollTop()"> Multiparedes </Button>
 
     <div class="gap-8 hidden md:flex text-white">
-      <Button variant="link">{{ $t('navbar.about') }}</Button>
+      <Button variant="link" @click="navigateAbout()">{{ $t('navbar.about') }}</Button>
       <Button variant="link">{{ $t('navbar.projects') }}</Button>
       <Button variant="link">{{ $t('navbar.contact') }}</Button>
     </div>
@@ -41,6 +41,10 @@ function scrollTop() {
     left: 0,
     behavior: 'smooth',
   })
+}
+
+function navigateAbout() {
+  document.getElementById('about')!.scrollIntoView({ behavior: 'smooth' })
 }
 
 onBeforeMount(() => {

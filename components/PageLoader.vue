@@ -16,7 +16,7 @@
 <script setup>
 import MarqueeText from 'vue-marquee-text-component'
 
-defineProps({
+const porps = defineProps({
   ready: { type: Boolean, required: true },
 })
 </script>

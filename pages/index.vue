@@ -6,16 +6,19 @@
     >
       <Navbar />
 
-      <HeroSection class="overflow-clip" @ready="allReady = true" />
+      <HeroSection @ready="allReady = true" />
     </section>
 
-    <section class="h-screen bg-primary-200 dark:bg-stone-600 z-20 overflow-clip"></section>
+    <section id="about" class="h-screen bg-gradient-to-r from-primary-200 to-slate-400 dark:bg-stone-600 z-20">
+      <AboutSection />
+    </section>
 
     <Footer />
   </div>
 </template>
 
 <script setup lang="ts">
+import { HeroSection, AboutSection } from '@/components/sections'
 const allReady = ref(false)
 </script>
 

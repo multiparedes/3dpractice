@@ -58,7 +58,7 @@ function navigate() {
 }
 
 .button-transparent-solid {
-  @apply text-current  p-0 text-current;
+  @apply text-current  p-0;
 }
 
 .button-error-solid {
