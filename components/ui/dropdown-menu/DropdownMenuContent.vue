@@ -8,12 +8,9 @@ import {
 } from 'radix-vue'
 import { cn } from '@/lib/utils'
 
-const props = withDefaults(
-  defineProps<DropdownMenuContentProps & { class?: string }>(),
-  {
-    sideOffset: 4,
-  },
-)
+const props = withDefaults(defineProps<DropdownMenuContentProps & { class?: string }>(), {
+  sideOffset: 4,
+})
 const emits = defineEmits<DropdownMenuContentEmits>()
 
 const forwarded = useForwardPropsEmits(props, emits)

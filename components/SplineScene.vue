@@ -3,18 +3,18 @@
 </template>
 
 <script setup lang="ts">
-import { Application } from "@splinetool/runtime";
+import { Application } from '@splinetool/runtime'
 
-const scene = ref<HTMLCanvasElement | null>(null);
+const scene = ref<HTMLCanvasElement | null>(null)
 
 interface Props {
-  url: string;
-  interactive?: boolean;
+  url: string
+  interactive?: boolean
 }
 
-const props = defineProps<Props>();
+const props = defineProps<Props>()
 
-const emit = defineEmits(["scene-loaded"]);
+const emit = defineEmits(['scene-loaded'])
 
 const state = reactive({
   spline: {
@@ -22,16 +22,16 @@ const state = reactive({
     app: null as Application | null,
     isLoaded: false,
   },
-});
+})
 
 onMounted(async () => {
   if (scene.value) {
-    const app = new Application(scene.value);
-    await app.load(state.spline.scene);
-    state.spline.app = app;
-    state.spline.isLoaded = true;
+    const app = new Application(scene.value)
+    await app.load(state.spline.scene)
+    state.spline.app = app
+    state.spline.isLoaded = true
 
-    emit("scene-loaded");
+    emit('scene-loaded')
   }
-});
+})
 </script>

@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import {
-  DropdownMenuSubTrigger,
-  type DropdownMenuSubTriggerProps,
-} from 'radix-vue'
+import { DropdownMenuSubTrigger, type DropdownMenuSubTriggerProps } from 'radix-vue'
 import { ChevronRight } from 'lucide-vue-next'
 import { cn } from '@/lib/utils'
 

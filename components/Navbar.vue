@@ -1,29 +1,18 @@
 <template>
-  <section
-    class="w-full flex justify-between text-white items-center content-center"
-  >
-    <Button color="transparent" class="text-xl" @click="scrollTop()">
-      Multiparedes
-    </Button>
+  <section class="w-full flex justify-between text-white items-center content-center">
+    <Button color="transparent" class="text-xl" @click="scrollTop()"> Multiparedes </Button>
 
     <div class="gap-8 hidden md:flex text-white">
-      <Button variant="link">{{ $t("navbar.about") }}</Button>
-      <Button variant="link">{{ $t("navbar.projects") }}</Button>
-      <Button variant="link">{{ $t("navbar.contact") }}</Button>
+      <Button variant="link">{{ $t('navbar.about') }}</Button>
+      <Button variant="link">{{ $t('navbar.projects') }}</Button>
+      <Button variant="link">{{ $t('navbar.contact') }}</Button>
     </div>
 
     <DropdownMenu>
       <DropdownMenuTrigger>
-        <Button
-          class="text-xl tracking-widest hidden md:flex"
-          color="transparent"
-        >
-          ...
-        </Button>
+        <Button class="text-xl tracking-widest hidden md:flex" color="transparent"> ... </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent
-        class="text-center items-center flex flex-col p-2 gap-2"
-      >
+      <DropdownMenuContent class="text-center items-center flex flex-col p-2 gap-2">
         <LanguageSelector />
         <ColorToggle />
       </DropdownMenuContent>
@@ -50,23 +39,22 @@ function scrollTop() {
   window.scrollTo({
     top: 0,
     left: 0,
-    behavior: "smooth",
-  });
+    behavior: 'smooth',
+  })
 }
 
 onBeforeMount(() => {
-  initialToggleTheme();
-});
+  initialToggleTheme()
+})
 
 function initialToggleTheme(): void {
   if (
-    localStorage.theme === "dark" ||
-    (!("theme" in localStorage) &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches)
+    localStorage.theme === 'dark' ||
+    (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
   ) {
-    document.documentElement.classList.add("dark");
+    document.documentElement.classList.add('dark')
   } else {
-    document.documentElement.classList.remove("dark");
+    document.documentElement.classList.remove('dark')
   }
 }
 </script>

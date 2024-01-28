@@ -9,16 +9,14 @@
       <HeroSection class="overflow-clip" @ready="allReady = true" />
     </section>
 
-    <section
-      class="h-screen bg-primary-200 dark:bg-stone-600 z-20 overflow-clip"
-    ></section>
+    <section class="h-screen bg-primary-200 dark:bg-stone-600 z-20 overflow-clip"></section>
 
     <Footer />
   </div>
 </template>
 
 <script setup lang="ts">
-const allReady = ref(false);
+const allReady = ref(false)
 </script>
 
 // https://discoverthreejs.com/ //

@@ -11,31 +11,31 @@
 </template>
 
 <script setup lang="ts">
-import { useRouter } from "vue-router";
+import { useRouter } from 'vue-router'
 
-const route = useRouter();
+const route = useRouter()
 
 interface Props {
-  color?: "primary" | "secondary" | "transparent" | "error";
-  variant?: "solid" | "bordered" | "link";
-  size?: string;
-  icon?: string | null;
-  disabled?: boolean;
-  iconStart?: boolean;
-  link?: string;
-  isExternalLink?: boolean;
+  color?: 'primary' | 'secondary' | 'transparent' | 'error'
+  variant?: 'solid' | 'bordered' | 'link'
+  size?: string
+  icon?: string | null
+  disabled?: boolean
+  iconStart?: boolean
+  link?: string
+  isExternalLink?: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  color: "primary",
-  variant: "solid",
-});
+  color: 'primary',
+  variant: 'solid',
+})
 
 function navigate() {
   if (props.isExternalLink) {
-    window.open(props.link, "_blank");
+    window.open(props.link, '_blank')
   } else if (props.link) {
-    route.push(props.link);
+    route.push(props.link)
   }
 }
 </script>

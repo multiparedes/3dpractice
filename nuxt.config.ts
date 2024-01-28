@@ -2,8 +2,8 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   ssr: false,
-  modules: ["@nuxtjs/tailwindcss", "shadcn-nuxt", "@nuxtjs/i18n"],
-  plugins: ["@/plugins/Iconify.js"],
+  modules: ['@nuxtjs/tailwindcss', 'shadcn-nuxt', '@nuxtjs/i18n'],
+  plugins: ['@/plugins/Iconify.js'],
   postcss: {
     plugins: {
       tailwindcss: {},
@@ -11,15 +11,15 @@ export default defineNuxtConfig({
     },
   },
   shadcn: {
-    prefix: "",
-    componentDir: "./components/ui",
+    prefix: '',
+    componentDir: './components/ui',
   },
   app: {
     head: {
-      title: "Personal portafolio",
+      title: 'Personal portafolio',
     },
   },
   i18n: {
-    vueI18n: "./i18n.config.ts",
+    vueI18n: './i18n.config.ts',
   },
-});
+})

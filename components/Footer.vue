@@ -2,7 +2,7 @@
   <section
     class="pt-1 h-8 dark:bg-darker bg-white dark:text-white text-slate-950 text-center flex justify-center gap-2"
   >
-    <p>{{ $t("footer.made_by") }}</p>
+    <p>{{ $t('footer.made_by') }}</p>
     -
     <div class="flex gap-2 mt-0.5">
       <MyTooltip :text="$t('footer.github')">
