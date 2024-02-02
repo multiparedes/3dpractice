@@ -5,6 +5,6 @@
   </div>
 </template>
 
-<script setup lang="ts">
+<script setup>
 import { SpeedInsights } from '@vercel/speed-insights/nuxt'
 </script>

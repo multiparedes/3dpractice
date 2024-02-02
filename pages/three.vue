@@ -1,24 +1,15 @@
 <template>
-  <!--<div id="scene-container" class="overflow-x-hidden">
-  </div>-->
-  <TresCanvas clear-color="#82DBC5" window-size>
-    <TresPerspectiveCamera />
-    <OrbitControls />
-    <Suspense>
-      <GLTFModel path="./ibiscus/scene.gltf" />
-    </Suspense>
-    <TresDirectionalLight :position="[-4, 8, 4]" :intensity="2" cast-shadow />
-  </TresCanvas>
+  <div class="grid place-content-center h-full px-4">
+    <TresCanvas clear-color="#82DBC5" window-size preset="realistic">
+      <TresPerspectiveCamera ref="cam" :position="[0, 1.5, 2]" :look-at="[0, 1.5, 0]" />
+      <Suspense>
+        <GLTFModel ref="avatar" path="./avatar.glb" />
+      </Suspense>
+      <TresDirectionalLight :position="[0, 8, 4]" :intensity="2" cast-shadow />
+    </TresCanvas>
+  </div>
 </template>
 
-<script setup>
-const boxRef = ref(null)
-
-const { onLoop } = useRenderLoop()
-
-onLoop(({ delta, elapsed }) => {
-  if (boxRef.value) {
-    boxRef.value.rotation.y += delta
-  }
-})
+<script setup lang="ts">
+const cam = shallowRef()
 </script>

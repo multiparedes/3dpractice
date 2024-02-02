@@ -2,12 +2,6 @@
   <section class="w-full flex justify-between text-white items-center content-center">
     <Button color="transparent" class="text-xl" @click="scrollTop()"> Multiparedes </Button>
 
-    <div class="gap-8 hidden md:flex text-white">
-      <Button variant="link" @click="navigateAbout()">{{ $t('navbar.about') }}</Button>
-      <Button variant="link">{{ $t('navbar.projects') }}</Button>
-      <Button variant="link">{{ $t('navbar.contact') }}</Button>
-    </div>
-
     <DropdownMenu>
       <DropdownMenuTrigger>
         <Button class="text-xl tracking-widest hidden md:flex" color="transparent"> ... </Button>
@@ -24,8 +18,6 @@
       </SheetTrigger>
       <SheetContent class="dark:bg-darker bg-slate-600 text-white">
         <div class="flex flex-col justify-center w-full h-full gap-4">
-          <Button variant="link">About me</Button>
-          <Button variant="link">My projects</Button>
           <LanguageSelector />
           <ColorToggle />
         </div>
@@ -43,8 +35,8 @@ function scrollTop() {
   })
 }
 
-function navigateAbout() {
-  document.getElementById('about')!.scrollIntoView({ behavior: 'smooth' })
+function navigateTo(location: string) {
+  document.getElementById(location)!.scrollIntoView({ behavior: 'smooth' })
 }
 
 onBeforeMount(() => {
