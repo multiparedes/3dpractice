@@ -1,14 +1,28 @@
 <template>
-  <div class="grid place-content-center h-full m-4 bg-red-900">
-    <TresCanvas class="p-3" window-size preset="realistic" :alpha="true" output-encoding="SRGBColorSpace">
-      <TresPerspectiveCamera :position="[0, 0, 2]" />
+  <div class="grid place-content-center h-screen w-full bg-primary-400 ">
+    <TresCanvas v-bind="gl" window-size preset="realistic">
+      <TresPerspectiveCamera :position="[0, 0, 2.5]" />
       <OrbitControls :enable-zoom="false" :min-polar-angle="MathUtils.degToRad(90)"
         :max-polar-angle="MathUtils.degToRad(90)" enableDamping :enable-pan="false" />
       <Suspense>
         <primitive :position="[0, -1.5, 0]" :object="model" />
       </Suspense>
-      <TresDirectionalLight :position="[2, 2, 25]" :intensity="1" cast-shadow />
-      <TresAmbientLight :position="[0, -2, 0]" />
+
+
+      <Levioso :range="[-0.05, 0.05]" :floatFactor="0.5" :rotationFactor="0.5">
+        <Suspense>
+          <GLTFModel path="./cloud.glb" :position="[3, 2, -5]" />
+        </Suspense>
+      </Levioso>
+
+      <Levioso>
+        <Suspense>
+          <GLTFModel path="./cloud.glb" :scale="0.5" :rotation="[75, 10, 0]" :position="[-3, -1, -3]" />
+        </Suspense>
+      </Levioso>
+
+      <TresDirectionalLight :position="[2, 2, 2]" :intensity="1" cast-shadow />
+      <TresAmbientLight :position="[0, -0.5, 0]" />
     </TresCanvas>
   </div>
 </template>
@@ -16,6 +30,14 @@
 <script setup lang="ts">
 import { useAnimations, useGLTF } from '@tresjs/cientos'
 import { MathUtils, Vector3 } from 'three'
+import { BasicShadowMap, SRGBColorSpace } from 'three'
+
+const gl = {
+  shadows: true,
+  alpha: true,
+  shadowMapType: BasicShadowMap,
+  outputColorSpace: SRGBColorSpace,
+}
 
 let cursorPosition: Vector3 = new Vector3()
 cursorPosition.z = -3
