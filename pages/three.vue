@@ -1,15 +1,30 @@
 <template>
-  <div class="grid place-content-center h-full px-4">
-    <TresCanvas clear-color="#82DBC5" window-size preset="realistic">
-      <TresPerspectiveCamera ref="cam" :position="[0, 1.5, 2]" :look-at="[0, 1.5, 0]" />
+  <div class="grid place-content-center h-full px-4 bg-red-300">
+    <TresCanvas window-size preset="realistic" :alpha="true">
+      <TresPerspectiveCamera :position="[0, 0, 2]" />
+      <OrbitControls :enable-zoom="false" :min-polar-angle="MathUtils.degToRad(55)"
+        :max-polar-angle="MathUtils.degToRad(85)" enableDamping />
       <Suspense>
-        <GLTFModel ref="avatar" path="./avatar.glb" />
+        <primitive :position="[0, -1.5, 0]" :object="model" />
       </Suspense>
-      <TresDirectionalLight :position="[0, 8, 4]" :intensity="2" cast-shadow />
+      <TresDirectionalLight :position="[2, 2, 25]" :intensity="1" cast-shadow />
+      <TresAmbientLight :position="[0, 0, 0]" />
     </TresCanvas>
   </div>
 </template>
 
 <script setup lang="ts">
-const cam = shallowRef()
+import { useAnimations } from '@tresjs/cientos'
+import { MathUtils } from 'three'
+
+const { scene: model, animations } = await useGLTF('/avatar.glb')
+
+const { actions, mixer } = useAnimations(animations, model)
+
+console.log(actions)
+
+let currentAction = actions.Idle
+
+currentAction.play()
+
 </script>
