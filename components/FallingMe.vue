@@ -32,8 +32,8 @@ defineProps({
   stars: {
     type: Boolean,
     required: false,
-    default: false
-  }
+    default: false,
+  },
 })
 
 const gl = {
