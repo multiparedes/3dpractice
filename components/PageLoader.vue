@@ -31,6 +31,7 @@ const porps = defineProps({
 .v-leave-to {
   opacity: 0;
 }
+
 .text-outline {
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: white;

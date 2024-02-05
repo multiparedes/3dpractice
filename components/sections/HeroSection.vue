@@ -2,11 +2,12 @@
   <section class="flex-grow flex items-center justify-center">
     <div class="z-10 text-center flex flex-col gap-4 text-white items-center">
       <div class="relative">
-        <h1 class="uppercase text-[45px] font-semibold tracking-wider text-outline-light dark:text-outline">
+        <h1 class="uppercase text-[45px] font-semibold tracking-wider text-outline-light dark:text-outline" :key="1">
           {{ $t('hero.title') }}
         </h1>
         <h1
           class="uppercase text-[45px] font-semibold tracking-wider bg-gradient-to-r from-primary-500 to-secondary-400 inline-block text-transparent bg-clip-text text-outline-light dark:text-outline"
+          :key="21"
         >
           {{ $t('hero.subtitle') }}
         </h1>
@@ -26,17 +27,10 @@
       url="https://prod.spline.design/gExza-HqyQINKaxa/scene.splinecode"
       @scene-loaded="allComplete = true"
     />
-    <!--
-      TODO: Reduce number of poligons.
-      <SplineScene
-      class="absolute"
-      url="https://prod.spline.design/7Efqdpd4pA4v9Bhd/scene.splinecode"
-      />
-    -->
   </section>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import Button from '@/components/Button.vue'
 
 const emit = defineEmits(['ready'])
@@ -47,7 +41,7 @@ watch(allComplete, () => {
 })
 
 function navigateAbout() {
-  document.getElementById('about').scrollIntoView({ behavior: 'smooth' })
+  document.getElementById('about')!.scrollIntoView({ behavior: 'smooth' })
 }
 </script>
 
