@@ -1,28 +1,30 @@
 <template>
-  <TresCanvas v-bind="gl" preset="realistic">
-    <TresPerspectiveCamera :position="[0, 0, 2]" />
+  <div class="absolute w-full h-full flex justify-center items-center z-0">
+    <TresCanvas v-bind="gl" preset="realistic">
+      <TresPerspectiveCamera :position="[0, 0, 2]" />
 
-    <Suspense>
-      <primitive :position="[0, -1.5, 0]" :object="model" />
-    </Suspense>
-
-    <Levioso :range="[-0.05, 0.05]" :floatFactor="0.25" :rotationFactor="0.5">
       <Suspense>
-        <GLTFModel path="./cloud.glb" :position="[3, 2, -7]" />
+        <primitive :position="[0, -1.5, 0]" :object="model" />
       </Suspense>
-    </Levioso>
 
-    <Levioso>
-      <Suspense>
-        <GLTFModel path="./cloud.glb" :scale="0.5" :rotation="[75, 10, 0]" :position="[-3, -1, -3]" />
-      </Suspense>
-    </Levioso>
+      <Levioso :range="[-0.05, 0.05]" :floatFactor="0.25" :rotationFactor="0.5">
+        <Suspense>
+          <GLTFModel path="./cloud.glb" :position="[3, 2, -7]" />
+        </Suspense>
+      </Levioso>
 
-    <Stars v-if="stars" :count="5000" :size="0.3" />
+      <Levioso>
+        <Suspense>
+          <GLTFModel path="./cloud.glb" :scale="0.5" :rotation="[75, 10, 0]" :position="[-3, -1, -3]" />
+        </Suspense>
+      </Levioso>
 
-    <TresDirectionalLight :position="[2, 2, 2]" :intensity="1" cast-shadow />
-    <TresAmbientLight :position="[0, -0.5, 0]" />
-  </TresCanvas>
+      <Stars v-if="stars" :count="5000" :size="0.3" />
+
+      <TresDirectionalLight :position="[2, 2, 2]" :intensity="1" cast-shadow />
+      <TresAmbientLight :position="[0, -0.5, 0]" />
+    </TresCanvas>
+  </div>
 </template>
 
 <script setup lang="ts">
