@@ -1,13 +1,11 @@
 <template>
-  <div class="grid place-content-center h-screen w-full bg-primary-400 ">
+  <div class="grid place-content-center h-screen w-full bg-primary-400">
     <TresCanvas v-bind="gl" window-size preset="realistic">
       <TresPerspectiveCamera :position="[0, 0, 2.5]" />
-      <OrbitControls :enable-zoom="false" :min-polar-angle="MathUtils.degToRad(90)"
-        :max-polar-angle="MathUtils.degToRad(90)" enableDamping :enable-pan="false" />
+
       <Suspense>
         <primitive :position="[0, -1.5, 0]" :object="model" />
       </Suspense>
-
 
       <Levioso :range="[-0.05, 0.05]" :floatFactor="0.5" :rotationFactor="0.5">
         <Suspense>
@@ -56,7 +54,7 @@ onLoop(() => {
   if (cursorPosition) {
     // Multiply the cursor position by -1 to make the model look in the correct direction
     const targetPosition = cursorPosition.clone().multiplyScalar(-1)
-    head?.lookAt(targetPosition,)
+    head?.lookAt(targetPosition)
   }
 })
 

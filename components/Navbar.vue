@@ -35,10 +35,6 @@ function scrollTop() {
   })
 }
 
-function navigateTo(location: string) {
-  document.getElementById(location)!.scrollIntoView({ behavior: 'smooth' })
-}
-
 onBeforeMount(() => {
   initialToggleTheme()
 })
