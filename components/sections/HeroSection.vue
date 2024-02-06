@@ -6,7 +6,8 @@
           {{ $t('hero.title') }}
         </h1>
         <h1
-          class="animate uppercase text-[45px] font-semibold tracking-wider bg-gradient-to-r from-primary-500 to-secondary-400 inline-block text-transparent bg-clip-text text-outline-light dark:text-outline">
+          class="animate uppercase text-[45px] font-semibold tracking-wider bg-gradient-to-r from-primary-500 to-secondary-400 inline-block text-transparent bg-clip-text text-outline-light dark:text-outline"
+        >
           {{ $t('hero.subtitle') }}
         </h1>
       </div>
@@ -20,14 +21,17 @@
       </Button>
     </div>
 
-    <SplineScene class="absolute z-[5]" url="https://prod.spline.design/gExza-HqyQINKaxa/scene.splinecode"
-      @scene-loaded="allComplete = true" />
+    <SplineScene
+      class="absolute z-[5]"
+      url="https://prod.spline.design/gExza-HqyQINKaxa/scene.splinecode"
+      @scene-loaded="allComplete = true"
+    />
   </section>
 </template>
 
 <script setup lang="ts">
 import Button from '@/components/Button.vue'
-import { appearItems } from '~/lib/gsapUtils';
+import { appearItems } from '~/lib/gsapUtils'
 
 const emit = defineEmits(['ready'])
 

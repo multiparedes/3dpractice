@@ -1,5 +1,5 @@
 <template>
-  <FallingMe :stars="isDarkMode" class="pointer-events-none z-0 " />
+  <FallingMe :stars="isDarkMode" class="pointer-events-none z-0" />
   <Card class="z-10 max-w-2xl px-4 py-2 appear">
     <p class="reveal">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
@@ -20,8 +20,7 @@ const isDarkMode = computed(() => {
 })
 
 onMounted(() => {
-  appearItems('.appear', 'right')
+  appearItems('.appear', 'top', true)
   revealText('.reveal')
 })
-
 </script>

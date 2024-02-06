@@ -26,7 +26,7 @@ function revealText(classSelector: string): void {
 
 type Direction = 'left' | 'right' | 'top' | 'bottom'
 
-function appearItems(classSelector: string, direction: Direction = 'left'): void {
+function appearItems(classSelector: string, direction: Direction = 'left', makeSrub: boolean = false): void {
   const items = document.querySelectorAll<HTMLElement>(classSelector)
 
   items.forEach((item, i) => {
@@ -47,11 +47,10 @@ function appearItems(classSelector: string, direction: Direction = 'left'): void
     let timeline = gsap.timeline({
       scrollTrigger: {
         trigger: classSelector,
-        start: 'top 95%',
-        end: 'bottom 10%',
-        scrub: false,
+        start: 'top 80%',
+        end: 'bottom 20%',
+        scrub: makeSrub,
         markers: false,
-        toggleActions: 'play reverse play reverse',
       },
     })
 

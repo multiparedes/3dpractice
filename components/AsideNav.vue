@@ -1,11 +1,15 @@
 <template>
   <div
-    class="flex fixed flex-col bottom-10 left-4 py-4 px-2 items-center gap-4 text-slate-950 dark:text-white bg-[#F8F8F8]/60 dark:bg-slate-900/80 rounded-2xl z-50">
+    class="flex fixed flex-col bottom-10 left-4 py-4 px-2 items-center gap-4 text-slate-950 dark:text-white bg-[#F8F8F8]/60 dark:bg-slate-900/80 rounded-2xl z-50"
+  >
     <ul v-for="section in sections" :key="section.name">
       <MyTooltip :text="section.name">
-        <Icon :icon="section.icon" class="h-6 w-6 dark:hover:text-secondary-400 hover:text-primary-400 transition-colors"
+        <Icon
+          :icon="section.icon"
+          class="h-6 w-6 dark:hover:text-secondary-400 hover:text-primary-400 transition-colors"
           :class="{ 'text-primary-600 dark:text-secondary-600': section.name === sectionActive }"
-          @click="smoothScroll(section)" />
+          @click="smoothScroll(section)"
+        />
       </MyTooltip>
     </ul>
   </div>
