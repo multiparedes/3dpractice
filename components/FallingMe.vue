@@ -1,8 +1,8 @@
 <template>
   <div class="absolute w-full h-full flex justify-center items-center z-0">
-    <TresCanvas v-bind="gl" preset="realistic">
+    <TresCanvas v-bind="gl" preset="realistic" class="mobile-active">
       <TresPerspectiveCamera :position="[0, 0, 2]" />
-      <ScrollControls htmlScroll>
+      <ScrollControls html-scroll>
         <Suspense>
           <primitive :position="[0, -1.5, 0]" :object="model" />
         </Suspense>
@@ -72,3 +72,9 @@ document.onmousemove = function (e) {
   cursorPosition.z = -3
 }
 </script>
+
+<style setup>
+.mobile-active {
+  touch-action: auto !important;
+}
+</style>
