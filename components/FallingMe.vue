@@ -2,11 +2,11 @@
   <div class="absolute w-full h-full flex justify-center items-center z-0">
     <TresCanvas v-bind="gl" preset="realistic">
       <TresPerspectiveCamera :position="[0, 0, 2]" />
-
-      <Suspense>
-        <primitive :position="[0, -1.5, 0]" :object="model" />
-      </Suspense>
-
+      <ScrollControls htmlScroll>
+        <Suspense>
+          <primitive :position="[0, -1.5, 0]" :object="model" />
+        </Suspense>
+      </ScrollControls>
       <Levioso :range="[-0.05, 0.05]" :floatFactor="0.25" :rotationFactor="0.5">
         <Suspense>
           <GLTFModel path="./cloud.glb" :position="[3, 2, -7]" />
