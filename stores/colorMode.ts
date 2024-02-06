@@ -1,5 +1,5 @@
 export const useColorMode = defineStore('colorMode', {
-  state: () => ({ color: 'dark' }),
+  state: () => ({ color: 'light' }),
   getters: {
     colorMode: (state) => state.color,
   },

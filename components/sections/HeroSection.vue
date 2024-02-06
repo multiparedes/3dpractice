@@ -2,18 +2,16 @@
   <section class="flex-grow flex items-center justify-center">
     <div class="z-10 text-center flex flex-col gap-4 text-white items-center">
       <div class="relative">
-        <h1 class="uppercase text-[45px] font-semibold tracking-wider text-outline-light dark:text-outline" :key="1">
+        <h1 class="uppercase text-[45px] font-semibold tracking-wider text-outline-light dark:text-outline animate">
           {{ $t('hero.title') }}
         </h1>
         <h1
-          class="uppercase text-[45px] font-semibold tracking-wider bg-gradient-to-r from-primary-500 to-secondary-400 inline-block text-transparent bg-clip-text text-outline-light dark:text-outline"
-          :key="21"
-        >
+          class="animate uppercase text-[45px] font-semibold tracking-wider bg-gradient-to-r from-primary-500 to-secondary-400 inline-block text-transparent bg-clip-text text-outline-light dark:text-outline">
           {{ $t('hero.subtitle') }}
         </h1>
       </div>
 
-      <p class="text-[20px]">
+      <p class="animate text-[20px]">
         {{ $t('hero.introduction') }}
       </p>
 
@@ -22,22 +20,21 @@
       </Button>
     </div>
 
-    <SplineScene
-      class="absolute z-[5]"
-      url="https://prod.spline.design/gExza-HqyQINKaxa/scene.splinecode"
-      @scene-loaded="allComplete = true"
-    />
+    <SplineScene class="absolute z-[5]" url="https://prod.spline.design/gExza-HqyQINKaxa/scene.splinecode"
+      @scene-loaded="allComplete = true" />
   </section>
 </template>
 
 <script setup lang="ts">
 import Button from '@/components/Button.vue'
+import { appearItems } from '~/lib/gsapUtils';
 
 const emit = defineEmits(['ready'])
 
 const allComplete = ref(false)
 watch(allComplete, () => {
   emit('ready')
+  appearItems('.animate', 'left')
 })
 
 function navigateAbout() {
